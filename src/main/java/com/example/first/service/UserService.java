@@ -12,4 +12,6 @@ public interface UserService {
 
     List<User> queryAll();
 
+    boolean save(User user);
+
 }

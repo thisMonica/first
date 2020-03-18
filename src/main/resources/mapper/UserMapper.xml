@@ -17,8 +17,8 @@
         select * from User
     </select>
 
-    <!--    <insert id="insert">-->
-    <!--        insert into User values(#{id},#{name},#{phone},#{area},#{age});-->
-    <!--    </insert>-->
+        <insert id="insert">
+            insert into User values(#{id},#{name},#{phone},#{area},#{age});
+        </insert>
 
 </mapper>

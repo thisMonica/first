@@ -1,5 +1,7 @@
 package com.example.first.entity;
 
+import org.springframework.stereotype.Repository;
+
 /**
  * @author hu
  * @date 2020/3/18 14:25
