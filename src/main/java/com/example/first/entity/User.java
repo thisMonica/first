@@ -1,5 +1,6 @@
 package com.example.first.entity;
 
+import lombok.Data;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -13,6 +14,15 @@ public class User {
     private String phone;
     private String area;
     private String age;
+
+
+    public User(String id, String name, String phone, String area, String age) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+        this.area = area;
+        this.age = age;
+    }
 
     public String getId() {
         return id;
@@ -52,6 +62,17 @@ public class User {
 
     public void setAge(String age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", area='" + area + '\'' +
+                ", age='" + age + '\'' +
+                '}';
     }
 
 }

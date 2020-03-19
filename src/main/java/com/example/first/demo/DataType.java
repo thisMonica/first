@@ -1,5 +1,7 @@
 package com.example.first.demo;
 
+import java.util.function.Consumer;
+
 /**
  * @author hujiahan
  * @date 2020/2/2 21:31
@@ -80,7 +82,5 @@ public class DataType {
     public static void doSomething(Integer integer) {
         integer = new Integer(2);
     }
-
-
 
 }
