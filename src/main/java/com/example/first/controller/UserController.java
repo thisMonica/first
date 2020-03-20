@@ -5,6 +5,8 @@ import com.example.first.mapper.UserMapper;
 import com.example.first.model.ResultJson;
 import com.example.first.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,6 +21,9 @@ public class UserController {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    StringRedisTemplate srt;
 
     @GetMapping("/queryAll")
     public ResultJson<Object> queryAll() {
@@ -43,9 +48,17 @@ public class UserController {
     public ResultJson<Object> save(User user) {
 
         boolean result = userService.save(user);
-
         return ResultJson.toSuccess(result);
     }
+
+
+    @GetMapping("/test")
+    public long test(){
+        Long increment = srt.opsForValue().increment("5", 1);
+        System.out.println(increment);
+        return increment;
+    }
+
 
 
 }
