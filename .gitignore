@@ -1,0 +1,34 @@
+HELP.md
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+ 
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+ 
+### IntelliJ IDEA ###
+.idea
+.idea/workspace.xml
+*.iws
+*.iml
+*.ipr
+.txlcn
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/build/
+ 
+### VS Code ###
+.vscode/
+ 
+————————————————
+版权声明：本文为CSDN博主「蒂法洛克」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/inflaRunAs/article/details/100134841
