@@ -15,6 +15,8 @@ public class User {
     private String area;
     private String age;
 
+    public User() {
+    }
 
     public User(String id, String name, String phone, String area, String age) {
         this.id = id;
