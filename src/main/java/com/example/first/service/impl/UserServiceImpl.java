@@ -27,7 +27,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean save(User user) {
         user.setId(UUID.randomUUID().toString());
-
         return userMapper.insert(user);
     }
 }

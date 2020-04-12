@@ -1,5 +1,6 @@
 package com.example.first.demo;
 
+import com.example.first.entity.User;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -25,8 +26,11 @@ public class Demo{
 
     public static void main(String[] args) {
 
-        String a ="12";
+        String a = null;
         log.error("出现异常");
         System.out.println(a.toString());
+
+
+
     }
 }
