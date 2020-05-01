@@ -14,11 +14,11 @@ public class FirstApplication {
         SpringApplication.run(FirstApplication.class, args);
     }
 
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer placeholderConfigurer() {
-        PropertySourcesPlaceholderConfigurer c = new PropertySourcesPlaceholderConfigurer();
-        c.setIgnoreUnresolvablePlaceholders(true);
-        return c;
-    }
+//    @Bean
+//    public static PropertySourcesPlaceholderConfigurer placeholderConfigurer() {
+//        PropertySourcesPlaceholderConfigurer c = new PropertySourcesPlaceholderConfigurer();
+//        c.setIgnoreUnresolvablePlaceholders(true);
+//        return c;
+//    }
 
 }

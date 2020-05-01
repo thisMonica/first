@@ -1,6 +1,7 @@
 package com.example.first.utils;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
  * @date 2020/4/19 11:52
  */
 @Component
+@PropertySource("classpath:application.properties")
 public class PropertiesUtils {
 
 

@@ -9,13 +9,10 @@ import java.util.List;
  * @author hu
  * @date 2020/3/18 15:14
  */
-public interface UserService {
+public interface DeptService {
 
-    List<User> queryAll();
+    List<Dept> queryAll();
 
-    boolean save(User user);
-
-    //入职
-    boolean Onboarding(User user, Dept dept);
+    boolean save(Dept dept);
 
 }

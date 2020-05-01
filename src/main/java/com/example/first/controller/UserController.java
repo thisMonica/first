@@ -1,5 +1,7 @@
 package com.example.first.controller;
 
+import com.alibaba.fastjson.JSONObject;
+import com.example.first.entity.Dept;
 import com.example.first.entity.User;
 import com.example.first.mapper.UserMapper;
 import com.example.first.model.ResultJson;
@@ -21,6 +23,7 @@ public class UserController {
 
     @Autowired
     UserService userService;
+
 
     @Autowired
     StringRedisTemplate srt;
@@ -45,20 +48,38 @@ public class UserController {
 
 
     @PostMapping("/save")
-    public ResultJson<Object> save(User user) {
+    public ResultJson<Object> save(@RequestBody User user) {
 
         boolean result = userService.save(user);
         return ResultJson.toSuccess(result);
     }
 
+    @PostMapping("/Onboarding")
+    public ResultJson<Object> Onboarding(@RequestBody String req) {
+        JSONObject params = JSONObject.parseObject(req).getJSONObject("req");
+        User user = new User();
+        user.setId(params.getString("id"));
+        user.setAge(params.getString("age"));
+        user.setName(params.getString("name"));
+        user.setPhone(params.getString("132"));
+        user.setArea(params.getString("area"));
+        Dept dept = Dept.builder()
+                .deptId(params.getString("deptId"))
+                .deptName(params.getString("deptName"))
+                .deptNo(params.getString("deptNo"))
+                .userId(params.getString("userId"))
+                .build();
+        boolean result = userService.Onboarding(user, dept);
+        return ResultJson.toSuccess(result);
+    }
+
 
     @GetMapping("/test")
-    public long test(){
+    public long test() {
         Long increment = srt.opsForValue().increment("5", 1);
         System.out.println(increment);
         return increment;
     }
-
 
 
 }

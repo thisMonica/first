@@ -1,7 +1,6 @@
 package com.example.first.model;
 
 import lombok.Data;
-import sun.plugin2.message.Serializer;
 
 import java.io.Serializable;
 import java.util.ArrayList;

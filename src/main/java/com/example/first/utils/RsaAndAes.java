@@ -24,6 +24,7 @@ public class RsaAndAes {
      * @return
      */
     public static String encode(String content) {
+
         String key = UUID.randomUUID().toString();
         log.info("key:{}", key);
         String encode = AES.AESEncode(key, content);
