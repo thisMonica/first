@@ -1,17 +1,20 @@
 package com.example.first.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.example.first.entity.Order;
 import com.example.first.entity.User;
+import com.example.first.mapper.OrderMapper;
 import com.example.first.model.ResultJson;
 import com.example.first.utils.PropertiesUtils;
 import com.example.first.utils.RsaAndAes;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @author hu
@@ -23,22 +26,38 @@ import java.util.List;
 @Slf4j
 public class TestController {
 
+    @Autowired
+    OrderMapper orderMapper;
 
-    @GetMapping("/test1")
-    public ResultJson<Object> queryAll() {
 
-        System.out.println(PropertiesUtils.publicKey);
-        System.out.println(PropertiesUtils.privateKey);
-//        System.out.println(PropertiesUtils.publicKey);
-        String json = RsaAndAes.encode("1");
-        JSONObject res = JSONObject.parseObject(json);
-        String sign = res.getString("sign");
-        String param = res.getString("param");
-        log.info("sign:{}", sign);
-        log.info("param:{}", param);
-        String params = RsaAndAes.dncode(sign, param);
-        log.info("content:{}", params);
-        return ResultJson.toSuccess(params);
+    @PostMapping("/pressure")
+    public ResultJson<Object> pressure(@RequestBody Order order) {
+
+
+        Long startTime = System.currentTimeMillis();
+        int count = 0;
+        while (count < 190000) {
+            order.setOrderId(UUID.randomUUID().toString().replace("-", ""));
+            order.setCrateDate(new Date());
+            boolean result = orderMapper.insert(order);
+            count++;
+        }
+        Long endTime = System.currentTimeMillis();
+        System.out.println("耗费时间:"+(endTime - startTime));
+
+        return ResultJson.toSuccess(true);
+
+
+    }
+
+
+    @GetMapping("/query")
+    public ResultJson<Object> query() {
+        List<Order> list = orderMapper.queryAll();
+
+        return ResultJson.toSuccess(list);
+
+
     }
 
 

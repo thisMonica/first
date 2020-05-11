@@ -49,9 +49,14 @@ public class UserController {
 
     @PostMapping("/save")
     public ResultJson<Object> save(@RequestBody User user) {
+//        int count = 0;
+//        while (count < 100000) {
+//            userService.save(user);
+//            count++;
+//        }
 
-        boolean result = userService.save(user);
-        return ResultJson.toSuccess(result);
+        boolean save = userService.save(user);
+        return ResultJson.toSuccess(save);
     }
 
     @PostMapping("/Onboarding")

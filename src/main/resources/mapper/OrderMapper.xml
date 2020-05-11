@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.first.mapper.OrderMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.first.entity.Order">
+
+        <id column="id" property="orderId"/>
+        <!--   column数据库字段名,   property映射实体字段  -->
+        <result column="user_id" property="userId"/>
+        <result column="commodity_id" property="commodityId"/>
+        <result column="amount" property="amount"/>
+        <result column="total_price" property="totalPrice"/>
+        <result column="payment" property="payment"/>
+        <result column="fee" property="fee"/>
+        <result column="status" property="status"/>
+        <result column="remarks" property="remarks"/>
+        <result column="crate_date" property="crateDate"/>
+        <result column="update_date" property="updateDate"/>
+        <result column="del_flag" property="delFlag"/>
+    </resultMap>
+
+    <select id="queryAll" resultMap="BaseResultMap">
+        select * from `order`
+    </select>
+
+    <insert id="insert">
+            insert into `order` values(#{orderId},#{commodityId},#{userId},#{amount},#{totalPrice},#{payment},#{fee},#{status},#{remarks},#{crateDate},#{updateDate},#{delFlag});
+    </insert>
+
+</mapper>
