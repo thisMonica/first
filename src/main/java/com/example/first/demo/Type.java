@@ -46,6 +46,5 @@ public final class Type {
 //        System.out.println(5+~10);
 
 
-
     }
 }

@@ -20,9 +20,7 @@ public class Test {
                     for (int j = 0; j < 1000; j++)
                         test.increase();
                 }
-
-                ;
-            }.start();
+             }.start();
         }
 
         while (Thread.activeCount() > 1)  //保证前面的线程都执行完

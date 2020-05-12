@@ -19,7 +19,6 @@ public class Demo1 {
         //获取cpu核数
         //cpu密集型，IO密集型
         System.out.println(Runtime.getRuntime().availableProcessors());
-        Lock
 
     }
 

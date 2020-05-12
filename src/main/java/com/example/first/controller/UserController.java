@@ -6,12 +6,19 @@ import com.example.first.entity.User;
 import com.example.first.mapper.UserMapper;
 import com.example.first.model.ResultJson;
 import com.example.first.service.UserService;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * @author hu
@@ -86,5 +93,17 @@ public class UserController {
         return increment;
     }
 
+    public static void main(String[] args) {
+        new Thread().run();
+        ExecutorService executorService = Executors.newFixedThreadPool(10);
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i <= 1000000; i++) {
+
+                }
+            }
+        });
+    }
 
 }
