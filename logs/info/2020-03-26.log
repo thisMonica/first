@@ -1,0 +1,15 @@
+2020-03-26 22:34:41.495 [INFO ] com.example.first.FirstApplication - Starting FirstApplication on DESKTOP-EUEQDC6 with PID 11028 (D:\project\first\target\classes started by 17168 in D:\project\first)
+2020-03-26 22:34:41.500 [INFO ] com.example.first.FirstApplication - No active profile set, falling back to default profiles: default
+2020-03-26 22:34:42.180 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-03-26 22:34:42.183 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-03-26 22:34:42.230 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25ms. Found 0 Redis repository interfaces.
+2020-03-26 22:34:42.737 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-26 22:34:42.746 [INFO ] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-26 22:34:42.746 [INFO ] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-26 22:34:42.746 [INFO ] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-26 22:34:42.852 [INFO ] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-26 22:34:42.852 [INFO ] org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1295 ms
+2020-03-26 22:34:43.531 [INFO ] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-26 22:34:43.746 [INFO ] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-26 22:34:43.767 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-26 22:34:43.770 [INFO ] com.example.first.FirstApplication - Started FirstApplication in 2.935 seconds (JVM running for 5.117)

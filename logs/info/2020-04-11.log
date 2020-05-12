@@ -1,0 +1,106 @@
+2020-04-11 22:17:08.725 [INFO ] com.example.first.FirstApplication - Starting FirstApplication on DESKTOP-EUEQDC6 with PID 9920 (D:\project\first\target\classes started by 17168 in D:\project\first)
+2020-04-11 22:17:08.730 [INFO ] com.example.first.FirstApplication - No active profile set, falling back to default profiles: default
+2020-04-11 22:17:09.417 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-11 22:17:09.419 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-04-11 22:17:09.462 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23ms. Found 0 Redis repository interfaces.
+2020-04-11 22:17:10.104 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 22:17:10.113 [INFO ] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 22:17:10.113 [INFO ] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 22:17:10.114 [INFO ] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-11 22:17:10.220 [INFO ] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 22:17:10.220 [INFO ] org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1444 ms
+2020-04-11 22:17:10.919 [INFO ] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 22:17:11.132 [INFO ] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 22:17:11.153 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 22:17:11.156 [INFO ] com.example.first.FirstApplication - Started FirstApplication in 2.859 seconds (JVM running for 5.987)
+2020-04-11 22:18:05.169 [INFO ] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-11 22:18:12.459 [INFO ] com.example.first.FirstApplication - Starting FirstApplication on DESKTOP-EUEQDC6 with PID 9188 (D:\project\first\target\classes started by 17168 in D:\project\first)
+2020-04-11 22:18:12.462 [INFO ] com.example.first.FirstApplication - No active profile set, falling back to default profiles: default
+2020-04-11 22:18:13.038 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-11 22:18:13.040 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-04-11 22:18:13.074 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22ms. Found 0 Redis repository interfaces.
+2020-04-11 22:18:13.518 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 22:18:13.527 [INFO ] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 22:18:13.527 [INFO ] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 22:18:13.527 [INFO ] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-11 22:18:13.628 [INFO ] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 22:18:13.628 [INFO ] org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1128 ms
+2020-04-11 22:18:14.233 [INFO ] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 22:18:14.425 [INFO ] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 22:18:14.445 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 22:18:14.448 [INFO ] com.example.first.FirstApplication - Started FirstApplication in 2.307 seconds (JVM running for 3.767)
+2020-04-11 22:18:41.021 [INFO ] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-11 22:18:47.005 [INFO ] com.example.first.FirstApplication - Starting FirstApplication on DESKTOP-EUEQDC6 with PID 17368 (D:\project\first\target\classes started by 17168 in D:\project\first)
+2020-04-11 22:18:47.009 [INFO ] com.example.first.FirstApplication - No active profile set, falling back to default profiles: default
+2020-04-11 22:18:47.584 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-11 22:18:47.586 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-04-11 22:18:47.620 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22ms. Found 0 Redis repository interfaces.
+2020-04-11 22:18:48.070 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 22:18:48.078 [INFO ] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 22:18:48.079 [INFO ] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 22:18:48.079 [INFO ] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-11 22:18:48.179 [INFO ] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 22:18:48.179 [INFO ] org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1132 ms
+2020-04-11 22:18:48.787 [INFO ] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 22:18:48.989 [INFO ] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 22:18:49.010 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 22:18:49.013 [INFO ] com.example.first.FirstApplication - Started FirstApplication in 2.319 seconds (JVM running for 3.94)
+2020-04-11 22:19:08.568 [INFO ] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-11 22:19:16.310 [INFO ] com.example.first.FirstApplication - Starting FirstApplication on DESKTOP-EUEQDC6 with PID 21936 (D:\project\first\target\classes started by 17168 in D:\project\first)
+2020-04-11 22:19:16.313 [INFO ] com.example.first.FirstApplication - No active profile set, falling back to default profiles: default
+2020-04-11 22:19:16.921 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-11 22:19:16.923 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-04-11 22:19:16.958 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22ms. Found 0 Redis repository interfaces.
+2020-04-11 22:19:17.407 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 22:19:17.414 [INFO ] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 22:19:17.415 [INFO ] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 22:19:17.415 [INFO ] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-11 22:19:17.520 [INFO ] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 22:19:17.520 [INFO ] org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1170 ms
+2020-04-11 22:19:18.187 [INFO ] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 22:19:18.433 [INFO ] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 22:19:18.456 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 22:19:18.460 [INFO ] com.example.first.FirstApplication - Started FirstApplication in 2.467 seconds (JVM running for 3.948)
+2020-04-11 22:19:34.416 [INFO ] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 22:19:34.417 [INFO ] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 22:19:34.422 [INFO ] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2020-04-11 22:24:28.180 [INFO ] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-11 22:24:33.743 [INFO ] com.example.first.FirstApplication - Starting FirstApplication on DESKTOP-EUEQDC6 with PID 7580 (D:\project\first\target\classes started by 17168 in D:\project\first)
+2020-04-11 22:24:33.746 [INFO ] com.example.first.FirstApplication - No active profile set, falling back to default profiles: default
+2020-04-11 22:24:34.313 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-11 22:24:34.315 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-04-11 22:24:34.349 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22ms. Found 0 Redis repository interfaces.
+2020-04-11 22:24:34.782 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 22:24:34.789 [INFO ] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 22:24:34.791 [INFO ] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 22:24:34.791 [INFO ] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-11 22:24:34.890 [INFO ] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 22:24:34.891 [INFO ] org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1109 ms
+2020-04-11 22:24:35.501 [INFO ] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 22:24:35.694 [INFO ] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 22:24:35.714 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 22:24:35.717 [INFO ] com.example.first.FirstApplication - Started FirstApplication in 2.285 seconds (JVM running for 3.738)
+2020-04-11 22:25:14.922 [INFO ] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 22:25:14.922 [INFO ] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 22:25:14.929 [INFO ] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2020-04-11 22:25:30.525 [INFO ] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-11 22:25:36.873 [INFO ] com.example.first.FirstApplication - Starting FirstApplication on DESKTOP-EUEQDC6 with PID 20560 (D:\project\first\target\classes started by 17168 in D:\project\first)
+2020-04-11 22:25:36.876 [INFO ] com.example.first.FirstApplication - No active profile set, falling back to default profiles: default
+2020-04-11 22:25:37.416 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-11 22:25:37.418 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-04-11 22:25:37.452 [INFO ] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22ms. Found 0 Redis repository interfaces.
+2020-04-11 22:25:37.905 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-04-11 22:25:37.914 [INFO ] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-11 22:25:37.914 [INFO ] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-11 22:25:37.915 [INFO ] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-11 22:25:38.015 [INFO ] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-11 22:25:38.015 [INFO ] org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1098 ms
+2020-04-11 22:25:38.634 [INFO ] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-11 22:25:38.842 [INFO ] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-04-11 22:25:38.862 [INFO ] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-11 22:25:38.864 [INFO ] com.example.first.FirstApplication - Started FirstApplication in 2.312 seconds (JVM running for 4.028)
+2020-04-11 22:25:42.152 [INFO ] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-11 22:25:42.152 [INFO ] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-11 22:25:42.157 [INFO ] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2020-04-11 22:25:42.204 [INFO ] com.example.first.controller.CardController - 请求参数:OTC,100
+2020-04-11 22:26:22.758 [INFO ] com.example.first.controller.CardController - 请求参数:PAY,1000000
