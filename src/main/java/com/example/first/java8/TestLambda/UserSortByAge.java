@@ -1,4 +1,4 @@
-package com.example.first.demo.TestLambda;
+package com.example.first.java8.TestLambda;
 
 import com.example.first.entity.User;
 

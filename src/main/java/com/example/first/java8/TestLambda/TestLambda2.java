@@ -1,6 +1,4 @@
-package com.example.first.demo.TestLambda;
-
-import com.example.first.entity.User;
+package com.example.first.java8.TestLambda;
 
 import java.util.*;
 import java.util.function.Consumer;

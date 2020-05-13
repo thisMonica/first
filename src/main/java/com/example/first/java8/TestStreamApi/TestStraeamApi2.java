@@ -1,4 +1,4 @@
-package com.example.first.demo.TestStreamApi;
+package com.example.first.java8.TestStreamApi;
 
 /**
  * @author hu
@@ -6,9 +6,7 @@ package com.example.first.demo.TestStreamApi;
  */
 
 import com.example.first.entity.Teacher;
-import com.example.first.entity.User;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;

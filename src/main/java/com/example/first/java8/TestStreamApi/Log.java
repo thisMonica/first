@@ -1,4 +1,4 @@
-package com.example.first.demo.TestStreamApi;
+package com.example.first.java8.TestStreamApi;
 
 /**
  * @author hu
