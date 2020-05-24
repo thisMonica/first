@@ -1,4 +1,4 @@
-package com.example.first.juc;
+package com.example.first.Thread;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

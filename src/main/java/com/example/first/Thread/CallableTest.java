@@ -1,4 +1,4 @@
-package com.example.first.juc;
+package com.example.first.Thread;
 
 /**
  * @author hu

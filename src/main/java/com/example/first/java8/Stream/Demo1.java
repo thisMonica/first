@@ -6,9 +6,14 @@ package com.example.first.java8.Stream;
  */
 
 import com.example.first.entity.User;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toList;
 
 /**
  * 题目要求：一分钟内完成此题，只能用一行代码实现
@@ -19,6 +24,7 @@ import java.util.List;
  * 4、用户字母倒着排序
  * 5、只输出一个用户
  */
+@Slf4j
 public class Demo1 {
 
     public static void main(String[] args) {
@@ -29,11 +35,30 @@ public class Demo1 {
         User user5 = new User("5", "five", "186", "深圳", "23");
 
         List<User> list = Arrays.asList(user1, user2, user3, user4, user5);
-        list.stream()
-                .filter((u) -> Integer.parseInt(u.getId()) % 2 == 0 && Integer.parseInt(u.getAge()) > 23)
-                .map((u) -> u.getName().toUpperCase())
-                .sorted((u1, u2) -> {return u2.compareTo(u1);})
-                .limit(1).forEach(System.out::println);
+//        list.stream()
+//                .filter((u) -> Integer.parseInt(u.getId()) % 2 == 0 && Integer.parseInt(u.getAge()) > 23)
+//                .map((u) -> u.getName().toUpperCase())
+//                .sorted((u1, u2) -> {
+//                    return u2.compareTo(u1);
+//                })
+//                .limit(1).forEach(System.out::println);
+//
+//        List<User> collect = list.stream().filter(l -> Integer.parseInt(l.getId()) > 3).collect(toList());
+//        System.out.println(collect);
+//        User user = list.stream().sorted(Comparator.comparing(User::getId).reversed()).findFirst().orElse(null);
+//        System.out.println(user);
+
+        int a = 1;
+        int b = 0;
+        try {
+            int c = a / b;
+        } catch (Exception e) {
+            log.info(e.getMessage());
+            int c = a / b;
+            System.out.println(c);
+        } finally {
+            System.out.println("后续");
+        }
 
     }
 
