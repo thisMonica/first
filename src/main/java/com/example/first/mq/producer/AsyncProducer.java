@@ -33,7 +33,7 @@ public class AsyncProducer {
 //        3、启动producer
         producer.start();
 //        4、创建消息对象，指定主题Topic、Tag和消息体
-        for (int i = 0; i < 10; i++) {
+//        for (int i = 0; i < 10; i++) {
             //先发十个
             //参数一：消息主题Topic
             //参数二：消息Tag
@@ -52,10 +52,10 @@ public class AsyncProducer {
                     log.info("发送异常:{}", throwable.getMessage());
                 }
             });
-            TimeUnit.MILLISECONDS.sleep(500);
-        }
+//            TimeUnit.MILLISECONDS.sleep(500);
+//        }
 //        6、关闭生产者producer
-        producer.shutdown();
+//        producer.shutdown();
     }
 
 

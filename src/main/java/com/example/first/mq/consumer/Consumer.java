@@ -22,7 +22,7 @@ public class Consumer {
     public static void main(String[] args) throws MQClientException {
 
 //        1、创建消费者Consumer，指定消费者组名
-        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("group1");
+        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("group2");
 //        2、指定Nameserver地址
         consumer.setNamesrvAddr("127.0.0.1:9876");
 //        3、订阅主题Topic和Tag
@@ -34,7 +34,7 @@ public class Consumer {
             @Override
             public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs,
                                                             ConsumeConcurrentlyContext context) {
-                System.out.printf("%s Receive New Messages: %s %n", Thread.currentThread().getName(), msgs);
+//                System.out.printf("%s Receive New Messages: %s %n", Thread.currentThread().getName(), msgs);
                 for (Message message : msgs) {
                     String msg = new String(message.getBody());
                     System.out.println(msg);
