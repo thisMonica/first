@@ -22,23 +22,23 @@ import static javafx.scene.input.KeyCode.L;
  * 异步消息通常是在对响应时间敏感的业务场景，即发送端不能容忍长时间的等待Broker的响应
  */
 @Slf4j
-public class AsyncProducer {
+public class AsyncProducer1 {
 
 
     public static void main(String[] args) throws MQClientException, RemotingException, InterruptedException, MQBrokerException {
 //        1、创建消息生产者prouducer,并指定生产组名
-        DefaultMQProducer producer = new DefaultMQProducer("producerGroup");
+        DefaultMQProducer producer = new DefaultMQProducer("producerGroup1");
 //        2、指定Nameserver地址
         producer.setNamesrvAddr("127.0.0.1:9876");
 //        3、启动producer
         producer.start();
 //        4、创建消息对象，指定主题Topic、Tag和消息体
-//        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++) {
             //先发十个
             //参数一：消息主题Topic
             //参数二：消息Tag
             //参数三：消息内容
-            Message msg = new Message("async", "Tag22", "Hello RocketMq".getBytes());
+            Message msg = new Message("async", "Tag2", "Hello RocketMq1".getBytes());
 //            5、发送消息
             producer.send(msg, new SendCallback() {
                 //发送成功的回调函数
@@ -52,10 +52,10 @@ public class AsyncProducer {
                     log.info("发送异常:{}", throwable.getMessage());
                 }
             });
-//            TimeUnit.MILLISECONDS.sleep(500);
-//        }
+            TimeUnit.MILLISECONDS.sleep(500);
+        }
 //        6、关闭生产者producer
-//        producer.shutdown();
+        producer.shutdown();
     }
 
 

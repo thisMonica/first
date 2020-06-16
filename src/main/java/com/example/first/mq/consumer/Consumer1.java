@@ -7,7 +7,6 @@ import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.common.message.MessageExt;
-import org.apache.rocketmq.common.protocol.heartbeat.MessageModel;
 
 import java.util.List;
 
@@ -17,16 +16,16 @@ import java.util.List;
  * <p>
  * 消息的消费者
  */
-public class Consumer {
+public class Consumer1 {
 
     public static void main(String[] args) throws MQClientException {
 
 //        1、创建消费者Consumer，指定消费者组名
-        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("consumerGroup1");
+        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("consumerGroup2");
 //        2、指定Nameserver地址
         consumer.setNamesrvAddr("127.0.0.1:9876");
 //        3、订阅主题Topic和Tag
-        consumer.subscribe("async", "Tag22");
+        consumer.subscribe("async", "Tag2");
         // 设置消费模式：负载均衡|广播模式(默认是负载均衡模式)
 //        consumer.setMessageModel(MessageModel.CLUSTERING);
 //        4、设置回调函数、处理消费

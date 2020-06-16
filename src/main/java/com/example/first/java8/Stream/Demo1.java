@@ -41,24 +41,46 @@ public class Demo1 {
 //                .sorted((u1, u2) -> {
 //                    return u2.compareTo(u1);
 //                })
-//                .limit(1).forEach(System.out::println);
+//                .limit(1).forEach(System.out::printl n);
 //
 //        List<User> collect = list.stream().filter(l -> Integer.parseInt(l.getId()) > 3).collect(toList());
 //        System.out.println(collect);
 //        User user = list.stream().sorted(Comparator.comparing(User::getId).reversed()).findFirst().orElse(null);
 //        System.out.println(user);
 
-        int a = 1;
-        int b = 0;
-        try {
-            int c = a / b;
-        } catch (Exception e) {
-            log.info(e.getMessage());
-            int c = a / b;
-            System.out.println(c);
-        } finally {
-            System.out.println("后续");
+//        int a = 1;
+//        int b = 0;
+//        try {
+//            int c = a / b;
+//        } catch (Exception e) {
+//            log.info(e.getMessage());
+//            int c = a / b;
+//            System.out.println(c);
+//        } finally {
+//            System.out.println("后续");
+//        }
+
+        String key = "a";
+        switch (key) {
+            case "a":
+                System.out.println(1);
+                System.out.println(1);
+                System.out.println(1);
+                break;
+            case "b":
+                System.out.println(2);
+                System.out.println(2);
+                System.out.println(2);
+                break;
+            case "c":
+                System.out.println(3);
+                System.out.println(3);
+                System.out.println(3);
+                break;
+
         }
+
+
 
     }
 
