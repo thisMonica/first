@@ -31,7 +31,6 @@ public class UserController {
     @Autowired
     UserService userService;
 
-
     @Autowired
     StringRedisTemplate srt;
 
@@ -87,10 +86,9 @@ public class UserController {
 
 
     @GetMapping("/test")
-    public long test() {
-        Long increment = srt.opsForValue().increment("5", 1);
-        System.out.println(increment);
-        return increment;
+    public ResultJson<Object> test() {
+        userService.test();
+        return ResultJson.toSuccess();
     }
 
     public static void main(String[] args) {

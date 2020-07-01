@@ -12,9 +12,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import javax.xml.bind.annotation.XmlAnyAttribute;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author hu
@@ -29,21 +35,46 @@ public class TestController {
     @Autowired
     OrderMapper orderMapper;
 
+    ExecutorService executor = Executors.newFixedThreadPool(12);
 
     @PostMapping("/pressure")
     public ResultJson<Object> pressure(@RequestBody Order order) {
 
-
         Long startTime = System.currentTimeMillis();
-        int count = 0;
-        while (count < 190000) {
-            order.setOrderId(UUID.randomUUID().toString().replace("-", ""));
+        AtomicInteger count = new AtomicInteger(0);
+        while (count.get() < 1000000) {
+            order.setOrderId(count.get() + "");
+            order.setUserId(UUID.randomUUID().toString().replace("-", ""));
+            order.setCommodityId(UUID.randomUUID().toString().replace("-", ""));
             order.setCrateDate(new Date());
-            boolean result = orderMapper.insert(order);
-            count++;
+            order.setAmount(count.get());
+            order.setTotalPrice(new BigDecimal(order.getAmount()));
+            String remarks = "";
+            for (int i = 0; i < 10; i++) {
+                char c = (char) (0x4e00 + (int) (Math.random() * (0x9fa5 - 0x4e00 + 1)));
+                remarks += c;
+            }
+            order.setRemarks(remarks);
+            if (count.get() != 0) {
+                order.setFee(new BigDecimal(count.get() % 2));
+            }
+            if (count.get() > 500000) {
+                order.setPayment("1");
+                order.setStatus("1");
+                order.setDelFlag("0");
+            } else {
+                order.setUpdateDate(new Date());
+                order.setPayment("2");
+                order.setStatus("0");
+                order.setDelFlag("1");
+            }
+            orderMapper.insert(order);
+            count.incrementAndGet();
+
+
         }
         Long endTime = System.currentTimeMillis();
-        System.out.println("耗费时间:"+(endTime - startTime));
+        System.out.println("耗费时间:" + (endTime - startTime));
 
         return ResultJson.toSuccess(true);
 
@@ -60,5 +91,14 @@ public class TestController {
 
     }
 
+
+    public static void main(String[] args) {
+        String a = "";
+        for (int i = 0; i < 10; i++) {
+            char c = (char) (0x4e00 + (int) (Math.random() * (0x9fa5 - 0x4e00 + 1)));
+            a += c;
+        }
+        System.out.println(a);
+    }
 
 }

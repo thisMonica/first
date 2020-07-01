@@ -24,6 +24,10 @@ import java.util.List;
 @Transactional
 public class UserServiceImpl implements UserService {
 
+    static String a = "a";
+
+    static List<User> users = new ArrayList<>();
+
     @Autowired
     private UserMapper userMapper;
 
@@ -49,5 +53,22 @@ public class UserServiceImpl implements UserService {
         boolean res2 = userMapper.insert(user);
         log.info("res2:{}", res2);
         return res1 && res2;
+    }
+
+    @Override
+    public void test() {
+        User user1 = new User();
+        user1.setId("1");
+        User user2 = new User();
+        user2.setId("2");
+        users.add(user1);
+        users.add(user2);
+        System.out.println(users);
+        int i = 0;
+        while(true){
+            System.out.println(i++);
+            users.add(user1);
+        }
+
     }
 }

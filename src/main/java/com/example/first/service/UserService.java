@@ -18,4 +18,6 @@ public interface UserService {
     //入职
     boolean Onboarding(User user, Dept dept);
 
+    void test();
+
 }

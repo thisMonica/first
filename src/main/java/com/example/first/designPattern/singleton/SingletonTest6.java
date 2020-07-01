@@ -7,7 +7,7 @@ package com.example.first.designPattern.singleton;
 public class SingletonTest6 {
 
 
-    //双重检查应用实例，推荐使用
+    //双重检查应用实例，推荐使用  Double Check Lock(DCL)
     static class Singleton {
 
         private static volatile Singleton instance;
