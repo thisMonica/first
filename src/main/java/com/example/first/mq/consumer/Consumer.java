@@ -20,7 +20,6 @@ import java.util.List;
 public class Consumer {
 
     public static void main(String[] args) throws MQClientException {
-
 //        1、创建消费者Consumer，指定消费者组名
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("consumerGroup1");
 //        2、指定Nameserver地址
@@ -45,6 +44,5 @@ public class Consumer {
 //        5、启动消费者consumer
         consumer.start();
     }
-
 
 }

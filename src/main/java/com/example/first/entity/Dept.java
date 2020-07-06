@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author hu
@@ -22,5 +23,5 @@ public class Dept implements Serializable {
     private String deptNo;
     private String deptName;
     private String userId;
-
+    List<User> users;
 }

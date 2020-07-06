@@ -5,12 +5,14 @@ package com.example.first.java8.Stream;
  * @date 2020/5/14 0:13
  */
 
+import com.alibaba.fastjson.JSONObject;
 import com.example.first.entity.User;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
@@ -27,61 +29,59 @@ import static java.util.stream.Collectors.toList;
 @Slf4j
 public class Demo1 {
 
+    static ExecutorService executor = Executors.newFixedThreadPool(5);
+
     public static void main(String[] args) {
         User user1 = new User("1", "one", "132", "深圳", "25");
-        User user2 = new User("2", "two", "138", "深圳", "26");
+        User user2 = new User("2", "one", "138", "深圳", "26");
         User user3 = new User("3", "three", "136", "深圳", "21");
         User user4 = new User("4", "Four", "157", "深圳", "24");
         User user5 = new User("5", "five", "186", "深圳", "23");
+        User user6 = new User("6", "five", "186", "深圳", "23");
+        User user7 = new User("7", "five", "186", "深圳", "23");
+        User user8 = new User("8", "five", "186", "深圳", "23");
+        User user9 = new User("9", "five", "186", "深圳", "23");
+        User user10 = new User("10", "five", "186", "深圳", "23");
+        User user11 = new User("11", "five", "186", "深圳", "23");
+        User user12 = new User("12", "five", "186", "深圳", "23");
 
-        List<User> list = Arrays.asList(user1, user2, user3, user4, user5);
+
+        List<User> list = Arrays.asList(user1, user2, user3, user4, user5,user6,user7,user8,user9,user10);
 //        list.stream()
 //                .filter((u) -> Integer.parseInt(u.getId()) % 2 == 0 && Integer.parseInt(u.getAge()) > 23)
 //                .map((u) -> u.getName().toUpperCase())
 //                .sorted((u1, u2) -> {
 //                    return u2.compareTo(u1);
 //                })
-//                .limit(1).forEach(System.out::printl n);
+//                .limit(1).forEach(System.out::println);
 //
 //        List<User> collect = list.stream().filter(l -> Integer.parseInt(l.getId()) > 3).collect(toList());
 //        System.out.println(collect);
 //        User user = list.stream().sorted(Comparator.comparing(User::getId).reversed()).findFirst().orElse(null);
 //        System.out.println(user);
 
-//        int a = 1;
-//        int b = 0;
-//        try {
-//            int c = a / b;
-//        } catch (Exception e) {
-//            log.info(e.getMessage());
-//            int c = a / b;
-//            System.out.println(c);
-//        } finally {
-//            System.out.println("后续");
-//        }
 
-        String key = "a";
-        switch (key) {
-            case "a":
-                System.out.println(1);
-                System.out.println(1);
-                System.out.println(1);
-                break;
-            case "b":
-                System.out.println(2);
-                System.out.println(2);
-                System.out.println(2);
-                break;
-            case "c":
-                System.out.println(3);
-                System.out.println(3);
-                System.out.println(3);
-                break;
+//        Map<String, String> levelMap = list.stream().
+//                collect(Collectors.toMap(User::getId, User::getName));
+//        String s = levelMap.get(null);
+//        System.out.println(s);
 
+//        List<User> studentDistinct2List = list.stream().filter(StreamUtil.distinctByKey(t->t.getName()))
+//                .collect(Collectors.toList());
+
+//        List<User> list1 = list.stream()
+//                .collect(Collectors.collectingAndThen
+//                        (Collectors.toCollection(() ->
+//                                        new TreeSet<>(Comparator.comparing(t -> t.getName()))),
+//                                ArrayList::new
+//                        )
+//                );
+//        System.out.println(JSONObject.toJSONString(list1));
+        for (User user : list) {
+            executor.execute(()->{
+                log.info("线程----{},用户id:{}",Thread.currentThread().getName(),user.getId());
+            });
         }
-
-
-
     }
 
 
