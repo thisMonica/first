@@ -4,10 +4,7 @@ import com.example.first.entity.Dept;
 import com.example.first.entity.User;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * @author hu
@@ -17,30 +14,17 @@ public class Test {
 
 
     public static void main(String[] args) {
-//        System.out.println(fuc(1));
-        String a ="1";
-        Comparator<String> compareToIgnoreCase = String::compareToIgnoreCase;
-
-        String b ="1";
-        User user1 = new User();
-        User user2 = new User();
-        user1.setName("1");
-        user2.setName("2");
-        List<User> users = new ArrayList<>();
-        users.add(user1);
-        users.add(user2);
-        Dept dept = new Dept();
-        dept.setUsers(users);
-        for (User user :users){
-            user.setName("123");
-        }
-        System.out.println(users);
-
-
+        Map<String, String> map = new HashMap<>();
+        map.put(null, "1");
+        map.put("1", null);
+        map.put("1", "131231");
+        System.out.println(map);
+        System.out.println(map.get(null));
+        System.out.println(map.get("21212"));
+        map.clear();
+        System.out.println();
 
     }
-
-
 
 
 }
