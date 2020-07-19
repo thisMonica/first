@@ -6,6 +6,10 @@ package com.example.first.algorithm;
  */
 public class Demo5 {
 
+    /**
+     * 取一维数组最大和最小值
+     */
+
     public static void main(String[] args) {
 
         int[] arr ={1,0,2,4,0,-1,3,6};

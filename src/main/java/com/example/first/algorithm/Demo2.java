@@ -30,15 +30,6 @@ public class Demo2 {
      *
      */
 
-
-    public static void main(String[] args) {
-        Demo2 demo2 = new Demo2();
-        String s = "MCMXCIV";
-        int i = demo2.romanToInt(s);
-        System.out.println(i);
-
-    }
-
     public int romanToInt(String s) {
         Map<String, Integer> map = new HashMap();
         map.put("I", 1);
@@ -67,5 +58,15 @@ public class Demo2 {
         System.out.println(sum);
         return sum;
     }
+
+    public static void main(String[] args) {
+        Demo2 demo2 = new Demo2();
+        String s = "MCMXCIV";
+        int i = demo2.romanToInt(s);
+        System.out.println(i);
+
+    }
+
+
 
 }

@@ -16,13 +16,6 @@ public class Demo1 {
      * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      */
 
-    public static void main(String[] args) {
-        int[] nums = {3, 2, 4};
-        int target = 6;
-        int[] ints = twoSum(nums, target);
-        System.out.println(ints);
-    }
-
     public static int[] twoSum(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
@@ -35,4 +28,13 @@ public class Demo1 {
         }
         return null;
     }
+
+    public static void main(String[] args) {
+        int[] nums = {3, 2, 4};
+        int target = 6;
+        int[] ints = twoSum(nums, target);
+        System.out.println(ints);
+    }
+
+
 }

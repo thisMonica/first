@@ -14,8 +14,8 @@ public class CallableTest {
 
         MyCallbale myCallbale = new MyCallbale();
         FutureTask futureTask = new FutureTask(myCallbale);
-        new Thread(futureTask,"thread1").start();
-        String  callable = (String) futureTask.get();
+        new Thread(futureTask, "thread1").start();
+        String callable = (String) futureTask.get();
         System.out.println(callable);
     }
 

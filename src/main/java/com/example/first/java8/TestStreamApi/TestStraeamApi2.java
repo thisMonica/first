@@ -34,10 +34,10 @@ public class TestStraeamApi2 {
     //@formatter:on
 
     List<Teacher> teachers = Arrays.asList(
-            new Teacher("1", "黄", 20, 5500d),
-            new Teacher("2", "张", 21, 5800d),
-            new Teacher("3", "李", 23, 6000d),
-            new Teacher("4", "赵", 25, 6500d)
+            new Teacher("1", "黄", 20, 5500d,1),
+            new Teacher("2", "张", 21, 5800d,2),
+            new Teacher("3", "李", 23, 6000d,3),
+            new Teacher("4", "赵", 25, 6500d,4)
     );
 
 
