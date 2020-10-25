@@ -50,4 +50,16 @@ class FirstApplicationTests {
         stringRedisTemplate.opsForValue().set("msg","hello");
     }
 
+    @Test
+    void redisTest1() {
+        redisTemplate.opsForValue().set("test", 213);
+        String test = redisTemplate.opsForValue().get("test").toString();
+        System.out.println(test);
+        redisTemplate.opsForList();
+        redisTemplate.opsForHash();
+        redisTemplate.opsForZSet();
+        redisTemplate.opsForSet();
+        stringRedisTemplate.opsForValue().set("msg","hello");
+    }
+
 }

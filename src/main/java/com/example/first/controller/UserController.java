@@ -28,7 +28,7 @@ import java.util.concurrent.Executors;
 @RequestMapping("/user")
 public class UserController {
 
-    @Autowired
+    @Autowired()
     UserService userService;
 
     @Autowired

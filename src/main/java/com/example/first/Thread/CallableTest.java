@@ -1,10 +1,12 @@
 package com.example.first.Thread;
 
+import org.springframework.context.annotation.Bean;
+
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
-/**
+/** 
  * @author hu
  * @date 2020/5/12 12:31
  */

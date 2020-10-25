@@ -1,6 +1,7 @@
 package com.example.first.api;
 
 import com.alibaba.fastjson.JSONObject;
+import com.example.first.okhttp.ParamsInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
@@ -18,23 +19,19 @@ public class HttpApi {
 
     static OkHttpClient okHttpClient = new OkHttpClient();
 
+
     final static String URL = "https://bch-chain.api.btc.com/v3/block/latest";
 
     public static void main(String[] args) {
 
-//        Request request = new Request.Builder()
-//                .url(URL)
-//                .build();
-//
-//        try {
-//            Response response = okHttpClient.newCall(request).execute();
-//            JSONObject jsonObject = JSONObject.parseObject(response.body().string());
-//            log.info(jsonObject.toJSONString());
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        ParamsInterceptor paramsInterceptor =
+                new ParamsInterceptor.Builder()
+                        .addHeaderParam("User-Agent", "xxxxxxxxxxx")
+                        .addHeaderParam("Accept", "application/json")
+                        .build();
 
+        OkHttpClient client = new OkHttpClient.Builder()
+                .addInterceptor(paramsInterceptor).build();
 
         Request.Builder reqBuild = new Request.Builder();
         HttpUrl.Builder urlBuilder = HttpUrl.parse("https://blockchain.info/unspent")
@@ -44,15 +41,15 @@ public class HttpApi {
         reqBuild.url(urlBuilder.build());
         Request request = reqBuild.build();
 
+
+
         try {
-            Response response = okHttpClient.newCall(request).execute();
+            Response response = client.newCall(request).execute();
             String res = response.body().string();
             System.out.println(res);
         } catch (IOException e) {
             e.printStackTrace();
         }
-//            JSONObject jsonObject = JSONObject.parseObject(response.body().string());
-//            log.info(jsonObject.toJSONString());
 
 
     }
