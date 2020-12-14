@@ -5,14 +5,18 @@ package com.example.first.test;
  * @date 2020/12/15 0:22
  * @desc:
  */
-public class Test3 implements Test2{
+public class Test3<T> implements Test2<T>{
 
     public static void main(String[] args) {
 
     }
 
-    @Override
-    public Object verify(Object a) {
-        return null;
+
+
+    public <T> T verify(T a) {
+        return a;
     }
+
+
+
 }

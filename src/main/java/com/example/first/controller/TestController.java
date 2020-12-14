@@ -5,6 +5,8 @@ import com.example.first.entity.Order;
 import com.example.first.entity.User;
 import com.example.first.mapper.OrderMapper;
 import com.example.first.model.ResultJson;
+import com.example.first.test.Test2;
+import com.example.first.test.Test3;
 import com.example.first.utils.PropertiesUtils;
 import com.example.first.utils.RsaAndAes;
 import lombok.extern.slf4j.Slf4j;
@@ -12,8 +14,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import javax.xml.bind.annotation.XmlAnyAttribute;
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -30,10 +34,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 @RestController
 @RequestMapping("/test")
 @Slf4j
-public class TestController {
+public class TestController<T> {
 
     @Autowired
     OrderMapper orderMapper;
+
+    @Resource(name= "Test3")
+    Test2 test3;
 
     ExecutorService executor = Executors.newFixedThreadPool(12);
 
@@ -100,5 +107,21 @@ public class TestController {
         }
         System.out.println(a);
     }
+
+    @GetMapping("/test2")
+    public ResultJson<Object> test2(String id) {
+        Test2<String> test311 = new Test3();
+        String verify = (String) test3.verify(id);
+        String verify1 = test311.verify(id);
+
+
+        List<String> strings = Arrays.asList("1");
+        return ResultJson.toSuccess(verify);
+
+
+    }
+
+
+
 
 }

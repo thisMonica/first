@@ -1,13 +1,16 @@
 package com.example.first.test;
 
+import org.springframework.stereotype.Service;
+
 /**
  * @author hu
  * @date 2020/12/15 0:20
  * @desc:
  */
-@FunctionalInterface
+@Service
 public interface Test2<T> {
 
-    T verify(T a);
+
+    <T> T verify(T a);
 
 }
