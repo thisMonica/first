@@ -1,13 +1,12 @@
 package com.example.first.test;
 
 import com.example.first.annotation.MyAnno;
-import com.fasterxml.jackson.annotation.JsonIgnoreType;
 
 /**
  * @author hu
  * @date 2020/10/15 1:26
  */
-public class Test {
+public class Test<T> {
 
 
     @MyAnno("12")
@@ -19,6 +18,12 @@ public class Test {
     public static void main(String[] args) throws NoSuchFieldException {
         test();
 
+    }
+
+    T get(){
+
+        System.out.println(11);
+        return (T) "";
     }
 
 }

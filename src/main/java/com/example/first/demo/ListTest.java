@@ -13,6 +13,7 @@ public class ListTest {
 
     public static void main(String[] args) {
         List<String> arrayList = new ArrayList();
+        String[] strings = arrayList.toArray(args);
 //        arrayList.add("a");
 //        arrayList.add("b");
 //        arrayList.add("c");

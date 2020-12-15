@@ -1,5 +1,6 @@
 package com.example.first.test;
 
+<<<<<<< HEAD
 import org.apache.lucene.util.RamUsageEstimator;
 
 import java.math.BigDecimal;
@@ -38,5 +39,19 @@ public class Test2 {
         System.out.println(c);
 
     }
+=======
+import org.springframework.stereotype.Service;
+
+/**
+ * @author hu
+ * @date 2020/12/15 0:20
+ * @desc:
+ */
+@Service
+public interface Test2<T> {
+
+
+    <T> T verify(T a);
+>>>>>>> origin/master
 
 }
