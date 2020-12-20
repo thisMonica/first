@@ -17,5 +17,4 @@ public interface UserMapper {
     List<User> queryAll();
 
     boolean insert(User user);
-
 }

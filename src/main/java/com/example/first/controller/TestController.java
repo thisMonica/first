@@ -9,6 +9,7 @@ import com.example.first.test.Test2;
 import com.example.first.test.Test3;
 import com.example.first.utils.PropertiesUtils;
 import com.example.first.utils.RsaAndAes;
+import com.sun.org.apache.xpath.internal.operations.Or;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -39,7 +40,8 @@ public class TestController<T> {
     @Autowired
     OrderMapper orderMapper;
 
-    @Resource(name= "Test3")
+
+    @Resource(name = "Test3")
     Test2 test3;
 
     ExecutorService executor = Executors.newFixedThreadPool(12);
@@ -48,8 +50,8 @@ public class TestController<T> {
     public ResultJson<Object> pressure(@RequestBody Order order) {
 
         Long startTime = System.currentTimeMillis();
-        AtomicInteger count = new AtomicInteger(0);
-        while (count.get() < 1000000) {
+        AtomicInteger count = new AtomicInteger(1000001);
+        while (count.get() < 1100001) {
             order.setOrderId(count.get() + "");
             order.setUserId(UUID.randomUUID().toString().replace("-", ""));
             order.setCommodityId(UUID.randomUUID().toString().replace("-", ""));
@@ -121,7 +123,37 @@ public class TestController<T> {
 
     }
 
+    @GetMapping("/queryTest")
+    public ResultJson<Object> test(String userId) {
 
+        for (int i = 0; i < 1100001; i++) {
+        long startTime = System.currentTimeMillis();
+
+        Order order = orderMapper.queryByUserId(userId);
+        long time = System.currentTimeMillis() - startTime;
+        log.info("查询耗费时间:{}", time);
+        }
+
+        return ResultJson.toSuccess();
+
+
+    }
+
+    @GetMapping("/queryTest1")
+    public ResultJson<Object> test1(String userId) {
+
+        for (int i = 0; i < 100000; i++) {
+        long startTime = System.currentTimeMillis();
+
+        int a = orderMapper.queryExist(userId);
+        long time = System.currentTimeMillis() - startTime;
+        log.info("耗费时间:{}", time);
+        }
+
+        return ResultJson.toSuccess();
+
+
+    }
 
 
 }

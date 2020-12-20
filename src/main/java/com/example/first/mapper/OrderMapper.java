@@ -20,4 +20,7 @@ public interface OrderMapper {
 
     boolean insert(Order order);
 
+    Order queryByUserId(String userId);
+
+    Integer queryExist(String userId);
 }

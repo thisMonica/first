@@ -25,6 +25,14 @@
         select * from `order`
     </select>
 
+    <select id="queryByUserId" resultMap="BaseResultMap">
+        select * from `order` where user_id = #{userId}
+    </select>
+
+    <select id="queryExist" resultType="java.lang.Integer">
+        select 1 from `order` where user_id = #{userId} limit 1
+    </select>
+
     <insert id="insert">
             insert into `order` values(#{orderId},#{commodityId},#{userId},#{amount},#{totalPrice},#{payment},#{fee},#{status},#{remarks},#{crateDate},#{updateDate},#{delFlag});
     </insert>
