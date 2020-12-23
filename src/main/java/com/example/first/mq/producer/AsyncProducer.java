@@ -33,12 +33,12 @@ public class AsyncProducer {
 //        3、启动producer
         producer.start();
 //        4、创建消息对象，指定主题Topic、Tag和消息体
-//        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++) {
             //先发十个
             //参数一：消息主题Topic
             //参数二：消息Tag
             //参数三：消息内容
-            Message msg = new Message("async", "Tag22", "Hello RocketMq".getBytes());
+            Message msg = new Message("async", "Tag2", "Hello RocketMq".getBytes());
 //            5、发送消息
             producer.send(msg, new SendCallback() {
                 //发送成功的回调函数
@@ -53,7 +53,7 @@ public class AsyncProducer {
                 }
             });
 //            TimeUnit.MILLISECONDS.sleep(500);
-//        }
+        }
 //        6、关闭生产者producer
 //        producer.shutdown();
     }

@@ -26,6 +26,7 @@ public class Consumer1 {
         consumer.setNamesrvAddr("127.0.0.1:9876");
 //        3、订阅主题Topic和Tag
         consumer.subscribe("async", "Tag2");
+        consumer.setConsumeMessageBatchMaxSize(2);
         // 设置消费模式：负载均衡|广播模式(默认是负载均衡模式)
 //        consumer.setMessageModel(MessageModel.CLUSTERING);
 //        4、设置回调函数、处理消费
@@ -34,6 +35,7 @@ public class Consumer1 {
             public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs,
                                                             ConsumeConcurrentlyContext context) {
 //                System.out.printf("%s Receive New Messages: %s %n", Thread.currentThread().getName(), msgs);
+                System.out.println(msgs.size());
                 for (Message message : msgs) {
                     String msg = new String(message.getBody());
                     System.out.println(msg);

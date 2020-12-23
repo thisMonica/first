@@ -25,7 +25,7 @@ public class Consumer {
 //        2、指定Nameserver地址
         consumer.setNamesrvAddr("127.0.0.1:9876");
 //        3、订阅主题Topic和Tag
-        consumer.subscribe("async", "Tag22");
+        consumer.subscribe("async1", "Tag2");
         // 设置消费模式：负载均衡|广播模式(默认是负载均衡模式)
 //        consumer.setMessageModel(MessageModel.CLUSTERING);
 //        4、设置回调函数、处理消费
