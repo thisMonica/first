@@ -16,5 +16,12 @@ public interface UserMapper {
 
     List<User> queryAll();
 
+    User queryById(String id);
+
     boolean insert(User user);
+
+    boolean updateAge(User user);
+
+    boolean updatExtend(User user);
+
 }

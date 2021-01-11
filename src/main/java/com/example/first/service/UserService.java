@@ -20,4 +20,8 @@ public interface UserService {
 
     void test();
 
+    boolean updateAge(User user);
+
+    boolean updatExtend(User user);
+
 }

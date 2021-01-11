@@ -6,6 +6,6 @@ public class UserSortByAge implements MySort<User> {
 
     @Override
     public boolean sort(User user) {
-        return user.getAge().compareTo("18") > 0;
+        return user.getAge().compareTo(18) > 0;
     }
 }

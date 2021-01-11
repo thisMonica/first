@@ -17,8 +17,21 @@
         select * from User
     </select>
 
+    <select id="queryById" resultMap="BaseResultMap">
+        select * from User where id = #{id}
+    </select>
+
     <insert id="insert">
             insert into User values(#{id},#{name},#{phone},#{area},#{age});
         </insert>
+
+    <update id="updateAge">
+        update `user` set age = age+#{age} where id = #{id};
+    </update>
+
+    <update id="updatExtend">
+        update `user` set extend = extend+#{extend} where id = #{id};
+    </update>
+
 
 </mapper>
