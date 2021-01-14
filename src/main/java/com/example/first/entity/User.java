@@ -19,7 +19,8 @@ public class User implements Comparable<User> {
     private String name;
     private String phone;
     private String area;
-    private String age;
+    private Integer age;
+    private Integer extend;
 
 
     @Override

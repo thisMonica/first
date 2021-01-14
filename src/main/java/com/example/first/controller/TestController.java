@@ -1,27 +1,22 @@
 package com.example.first.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import com.example.first.entity.Order;
 import com.example.first.entity.User;
 import com.example.first.mapper.OrderMapper;
 import com.example.first.model.ResultJson;
+import com.example.first.service.UserService;
 import com.example.first.test.Test2;
 import com.example.first.test.Test3;
-import com.example.first.utils.PropertiesUtils;
-import com.example.first.utils.RsaAndAes;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import javax.xml.bind.annotation.XmlAnyAttribute;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -39,8 +34,13 @@ public class TestController<T> {
     @Autowired
     OrderMapper orderMapper;
 
-    @Resource(name= "Test3")
+
+    @Resource(name = "Test3")
     Test2 test3;
+
+    @Autowired
+    UserService userService;
+
 
     ExecutorService executor = Executors.newFixedThreadPool(12);
 
@@ -48,8 +48,8 @@ public class TestController<T> {
     public ResultJson<Object> pressure(@RequestBody Order order) {
 
         Long startTime = System.currentTimeMillis();
-        AtomicInteger count = new AtomicInteger(0);
-        while (count.get() < 1000000) {
+        AtomicInteger count = new AtomicInteger(1000001);
+        while (count.get() < 1100001) {
             order.setOrderId(count.get() + "");
             order.setUserId(UUID.randomUUID().toString().replace("-", ""));
             order.setCommodityId(UUID.randomUUID().toString().replace("-", ""));
@@ -121,7 +121,68 @@ public class TestController<T> {
 
     }
 
+    @GetMapping("/queryTest")
+    public ResultJson<Object> test(String userId) {
 
+        for (int i = 0; i < 1100001; i++) {
+            long startTime = System.currentTimeMillis();
+
+            Order order = orderMapper.queryByUserId(userId);
+            long time = System.currentTimeMillis() - startTime;
+            log.info("查询耗费时间:{}", time);
+        }
+
+        return ResultJson.toSuccess();
+
+
+    }
+
+    @GetMapping("/queryTest1")
+    public ResultJson<Object> test1(String userId) {
+
+        for (int i = 0; i < 100000; i++) {
+            long startTime = System.currentTimeMillis();
+
+            int a = orderMapper.queryExist(userId);
+            long time = System.currentTimeMillis() - startTime;
+            log.info("耗费时间:{}", time);
+        }
+
+        return ResultJson.toSuccess();
+
+
+    }
+
+    @GetMapping("/queryTest3")
+    public ResultJson<Object> test3(String id, Integer age,Integer extend) {
+
+        log.info("id:{},age:{}", id, age);
+        for (int i = 0; i < 10000; i++) {
+            executor.execute(new Runnable() {
+                @Override
+                public void run() {
+                    User user = new User();
+                    user.setId(id);
+                    user.setAge(age);
+                    userService.updateAge(user);
+                }
+            });
+
+            executor.execute(new Runnable() {
+                @Override
+                public void run() {
+                    User user = new User();
+                    user.setId(id);
+                    user.setExtend(extend);
+                    userService.updatExtend(user);
+                }
+            });
+
+        }
+        return ResultJson.toSuccess();
+
+
+    }
 
 
 }

@@ -70,7 +70,7 @@ public class UserController {
         JSONObject params = JSONObject.parseObject(req).getJSONObject("req");
         User user = new User();
         user.setId(params.getString("id"));
-        user.setAge(params.getString("age"));
+        user.setAge(params.getInteger("age"));
         user.setName(params.getString("name"));
         user.setPhone(params.getString("132"));
         user.setArea(params.getString("area"));

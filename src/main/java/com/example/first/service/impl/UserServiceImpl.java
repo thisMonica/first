@@ -65,10 +65,29 @@ public class UserServiceImpl implements UserService {
         users.add(user2);
         System.out.println(users);
         int i = 0;
-        while(true){
+        while (true) {
             System.out.println(i++);
             users.add(user1);
         }
 
+    }
+
+    @Override
+    public boolean updateAge(User user) {
+//        User u = userMapper.queryById(user.getId());
+//        Integer age = u.getAge() + user.getAge();
+//        log.info("age:{}", age);
+//        user.setAge(age);
+        boolean update = userMapper.updateAge(user);
+
+        return update;
+    }
+
+    @Override
+    public boolean updatExtend(User user) {
+
+        boolean update = userMapper.updatExtend(user);
+
+        return false;
     }
 }

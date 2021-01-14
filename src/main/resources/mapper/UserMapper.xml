@@ -6,7 +6,7 @@
 
     <resultMap id="BaseResultMap" type="com.example.first.entity.User">
         <id column="id" property="id"/>
-<!--   column数据库字段名,   property映射实体字段  -->
+        <!--   column数据库字段名,   property映射实体字段  -->
         <result column="name" property="name"/>
         <result column="phone" property="phone"/>
         <result column="area" property="area"/>
@@ -17,8 +17,21 @@
         select * from User
     </select>
 
-        <insert id="insert">
+    <select id="queryById" resultMap="BaseResultMap">
+        select * from User where id = #{id}
+    </select>
+
+    <insert id="insert">
             insert into User values(#{id},#{name},#{phone},#{area},#{age});
         </insert>
+
+    <update id="updateAge">
+        update `user` set age = age+#{age} where id = #{id};
+    </update>
+
+    <update id="updatExtend">
+        update `user` set extend = extend+#{extend} where id = #{id};
+    </update>
+
 
 </mapper>
