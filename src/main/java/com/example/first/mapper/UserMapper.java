@@ -24,4 +24,8 @@ public interface UserMapper {
 
     boolean updatExtend(User user);
 
+    boolean sub(User user);
+
+    boolean plus(User user);
+
 }

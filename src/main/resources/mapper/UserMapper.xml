@@ -34,4 +34,13 @@
     </update>
 
 
+    <update id="sub">
+        update `user` set extend = extend - #{extend} where phone = #{phone};
+    </update>
+
+    <update id="plus">
+        update `user` set extend = extend + #{extend} where phone = #{phone};
+    </update>
+
+
 </mapper>

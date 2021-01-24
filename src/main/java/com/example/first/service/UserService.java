@@ -24,4 +24,10 @@ public interface UserService {
 
     boolean updatExtend(User user);
 
+    boolean sub(User user);
+
+    boolean plus(User user);
+//
+    boolean transfer(User fromUser, User toUser);
+
 }

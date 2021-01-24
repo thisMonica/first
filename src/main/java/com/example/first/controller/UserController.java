@@ -104,4 +104,38 @@ public class UserController {
         });
     }
 
+
+    @GetMapping("/transfer")
+    public void transfer() {
+
+        User fromUser = new User();
+        fromUser.setId("1");
+        fromUser.setExtend(100);
+        fromUser.setPhone("132");
+        User toUser = new User();
+        toUser.setId("2");
+        toUser.setExtend(100);
+        toUser.setPhone("123");
+
+        for (int i = 0; i < 1000; i++) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    userService.transfer(fromUser,toUser);
+                }
+            }).start();
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    userService.transfer(toUser,fromUser);
+                }
+            }).start();
+        }
+
+
+
+    }
+
+
 }

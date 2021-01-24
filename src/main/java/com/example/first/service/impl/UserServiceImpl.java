@@ -88,6 +88,31 @@ public class UserServiceImpl implements UserService {
 
         boolean update = userMapper.updatExtend(user);
 
-        return false;
+        return update;
+    }
+
+    @Override
+    public boolean sub(User user) {
+        boolean result = userMapper.sub(user);
+
+        return result;
+    }
+
+    @Override
+    public boolean plus(User user) {
+        boolean result = userMapper.plus(user);
+
+        return result;
+    }
+//
+    @Override
+    public boolean transfer(User fromUser, User toUser) {
+
+        boolean result1 = userMapper.sub(fromUser);
+
+        boolean result2 = userMapper.plus(toUser);
+
+
+        return result1 && result2;
     }
 }
