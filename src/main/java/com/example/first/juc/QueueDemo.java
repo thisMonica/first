@@ -17,7 +17,6 @@ public class QueueDemo {
 //        test3();
         test4();
 
-
     }
 
 

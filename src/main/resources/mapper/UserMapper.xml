@@ -35,11 +35,11 @@
 
 
     <update id="sub">
-        update `user` set extend = extend - #{extend} where phone = #{phone};
+        update `user` set extend = extend - #{extend} where phone = #{phone} and `name` = #{name} ;
     </update>
 
     <update id="plus">
-        update `user` set extend = extend + #{extend} where phone = #{phone};
+        update `user` set extend = extend + #{extend} where phone = #{phone} and `name` = #{name};
     </update>
 
 

@@ -1,10 +1,8 @@
 package com.example.first.demo;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @date 2020/2/13 22:22
@@ -25,9 +23,9 @@ public class ListTest {
 //        set.add(1);
 //        System.out.println(set);
 
-
         printDefaultCapacityList();
         printEmptyCapacityList();
+
 
     }
 

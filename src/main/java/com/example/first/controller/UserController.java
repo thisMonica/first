@@ -109,13 +109,15 @@ public class UserController {
     public void transfer() {
 
         User fromUser = new User();
-        fromUser.setId("1");
+//        fromUser.setId("1");
         fromUser.setExtend(100);
         fromUser.setPhone("132");
+        fromUser.setName("战三");
         User toUser = new User();
-        toUser.setId("2");
+//        toUser.setId("2");
         toUser.setExtend(100);
         toUser.setPhone("123");
+        toUser.setName("李四");
 
         for (int i = 0; i < 1000; i++) {
             new Thread(new Runnable() {

@@ -1,5 +1,6 @@
 package com.example.first.juc.pool;
 
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -14,7 +15,6 @@ public class ExcutorsDemo1 {
         ExecutorService threadPool1 = Executors.newSingleThreadExecutor();//单个线程
         ExecutorService threadPool2 = Executors.newFixedThreadPool(5);//创建一个固定的线程池大小
         ExecutorService threadPool3 = Executors.newCachedThreadPool();//可伸缩
-
         try {
             for (int i = 0; i < 100; i++) {
                 //使用线程池创建线程
