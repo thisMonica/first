@@ -42,7 +42,6 @@ public class SentinelController {
 
     @PostConstruct//当前类的构造函数执行之后执行
     public void flowRule() {
-
         List<FlowRule> rules = new ArrayList<>();
         FlowRule rule = new FlowRule();
         rule.setResource("HelloWorld");

@@ -23,4 +23,7 @@ public interface OrderMapper {
     Order queryByUserId(String userId);
 
     Integer queryExist(String userId);
+
+    boolean updateById(Order order);
+
 }

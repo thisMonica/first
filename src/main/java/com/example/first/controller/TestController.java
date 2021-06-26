@@ -3,6 +3,7 @@ package com.example.first.controller;
 import com.example.first.entity.Order;
 import com.example.first.entity.User;
 import com.example.first.mapper.OrderMapper;
+import com.example.first.mapper.UserMapper;
 import com.example.first.model.ResultJson;
 import com.example.first.service.UserService;
 import com.example.first.test.Test2;
@@ -34,6 +35,8 @@ public class TestController<T> {
     @Autowired
     OrderMapper orderMapper;
 
+    @Autowired
+    UserMapper userMapper;
 
     @Resource(name = "Test3")
     Test2 test3;
@@ -183,9 +186,6 @@ public class TestController<T> {
 
 
     }
-
-
-
 
 
 }

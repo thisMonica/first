@@ -42,5 +42,16 @@
         update `user` set extend = extend + #{extend} where phone = #{phone} and `name` = #{name};
     </update>
 
+    <update id="updateById" >
+        update `user`
+
+        <set>
+            <if test="name != null">name1 =# {name},</if>
+            <if test="phone != null"> phone = #{phone},</if>
+            <if test="age != null"> age =#{age}</if>
+        </set>
+        where id = #{id}
+
+    </update>
 
 </mapper>

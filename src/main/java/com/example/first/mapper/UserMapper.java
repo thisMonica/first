@@ -28,4 +28,6 @@ public interface UserMapper {
 
     boolean plus(User user);
 
+    boolean updateById(User user);
+
 }

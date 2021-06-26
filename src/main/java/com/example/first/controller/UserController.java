@@ -2,14 +2,21 @@ package com.example.first.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.first.entity.Dept;
+import com.example.first.entity.Order;
 import com.example.first.entity.User;
+import com.example.first.mapper.OrderMapper;
 import com.example.first.mapper.UserMapper;
 import com.example.first.model.ResultJson;
+import com.example.first.service.CommonService;
 import com.example.first.service.UserService;
+import com.sun.org.apache.xpath.internal.operations.Or;
+import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -20,12 +27,15 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import static org.springframework.transaction.annotation.Propagation.REQUIRES_NEW;
+
 /**
  * @author hu
  * @date 2020/3/18 14:34
  */
 @RestController
 @RequestMapping("/user")
+@Slf4j
 public class UserController {
 
     @Autowired()
@@ -33,6 +43,15 @@ public class UserController {
 
     @Autowired
     StringRedisTemplate srt;
+
+    @Autowired
+    UserMapper userMapper;
+
+    @Autowired
+    OrderMapper orderMapper;
+
+    @Autowired
+    CommonService commonService;
 
     @GetMapping("/queryAll")
     public ResultJson<Object> queryAll() {
@@ -84,6 +103,41 @@ public class UserController {
         return ResultJson.toSuccess(result);
     }
 
+    @PostMapping("/testTran")
+    public ResultJson<Object> testTran(@RequestBody String req) {
+        JSONObject params = JSONObject.parseObject(req).getJSONObject("req");
+        User user = new User();
+        user.setId(params.getString("userId"));
+        user.setAge(params.getInteger("age"));
+        user.setName(params.getString("name"));
+        user.setPhone(params.getString("phone"));
+
+        Order order = new Order();
+        order.setOrderId(params.getString("orderId"));
+        order.setRemarks(params.getString("remarks"));
+
+//        boolean res2 = false;
+//        boolean res1 = false;
+//        try {
+//            res2 = orderMapper.updateById(order);
+//            res1 = userMapper.updateById(user);
+//        } catch (Exception e) {
+//            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+//        }
+
+        Order order1 = new Order();
+        order1.setOrderId("200");
+        order1.setRemarks(params.getString("remarks"));
+        boolean res11 = orderMapper.updateById(order1);
+
+        boolean res = commonService.tranTest(user, order);
+
+        System.out.println("11112312321");
+
+        return ResultJson.toSuccess(res);
+    }
+
+
 
     @GetMapping("/test")
     public ResultJson<Object> test() {
@@ -123,18 +177,17 @@ public class UserController {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    userService.transfer(fromUser,toUser);
+                    userService.transfer(fromUser, toUser);
                 }
             }).start();
 
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    userService.transfer(toUser,fromUser);
+                    userService.transfer(toUser, fromUser);
                 }
             }).start();
         }
-
 
 
     }

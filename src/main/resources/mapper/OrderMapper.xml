@@ -37,4 +37,14 @@
             insert into `order` values(#{orderId},#{commodityId},#{userId},#{amount},#{totalPrice},#{payment},#{fee},#{status},#{remarks},#{crateDate},#{updateDate},#{delFlag});
     </insert>
 
+    <update id="updateById" >
+        update `order`
+
+        <set>
+            <if test="remarks != null">remarks = #{remarks},</if>
+        </set>
+        where id = #{orderId}
+
+    </update>
+
 </mapper>
