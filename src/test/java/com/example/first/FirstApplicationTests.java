@@ -1,5 +1,8 @@
 package com.example.first;
 
+import com.example.first.entity.Order;
+import com.example.first.entity.User;
+import com.example.first.service.CommonService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
@@ -21,6 +24,9 @@ class FirstApplicationTests {
 
     @Autowired
     StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    CommonService commonService;
 
     @Test
     void contextLoads() throws SQLException {
@@ -60,6 +66,22 @@ class FirstApplicationTests {
         redisTemplate.opsForZSet();
         redisTemplate.opsForSet();
         stringRedisTemplate.opsForValue().set("msg","hello");
+    }
+
+
+    @Test
+    public void test1(){
+        User user = new User();
+        user.setId("100");
+        user.setAge(100);
+        user.setName("张三");
+        user.setPhone("13924198448");
+
+        Order order = new Order();
+        order.setOrderId("10000000000000");
+        order.setRemarks("aadasd");
+        boolean res = commonService.tranTest(user, order);
+        System.out.println(res);
     }
 
 }

@@ -56,7 +56,15 @@ public class UserController {
     @GetMapping("/queryAll")
     public ResultJson<Object> queryAll() {
 
-        List<User> users = userService.queryAll();
+        List<User> users = null;
+        try {
+            int i = 1/0;
+            users = userService.queryAll();
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
+
+
 
         return ResultJson.toSuccess(users);
     }
@@ -125,16 +133,22 @@ public class UserController {
 //            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
 //        }
 
-        Order order1 = new Order();
-        order1.setOrderId("200");
-        order1.setRemarks(params.getString("remarks"));
-        boolean res11 = orderMapper.updateById(order1);
+        for (int i = 0; i < 2; i++) {
+            Order order1 = new Order();
+            order1.setOrderId("200");
+            if (i == 1 ){
+                order1.setOrderId("201");
+            }
+            order1.setRemarks(params.getString("remarks"));
+            boolean res11 = orderMapper.updateById(order1);
 
-        boolean res = commonService.tranTest(user, order);
+            boolean res = commonService.tranTest(user, order);
+        }
+
 
         System.out.println("11112312321");
 
-        return ResultJson.toSuccess(res);
+        return ResultJson.toSuccess();
     }
 
 

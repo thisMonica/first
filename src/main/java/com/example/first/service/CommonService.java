@@ -26,12 +26,9 @@ public class CommonService {
     public boolean tranTest(User user, Order order) {
         boolean res2 = false;
         boolean res1 = false;
-        try {
-            orderMapper.updateById(order);
-            userMapper.updateById(user);
-        } catch (Exception e) {
-            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
-        }
+        orderMapper.updateById(order);
+        int a = 1 /0 ;
+        userMapper.updateById(user);
         return res2 && res1;
     }
 
