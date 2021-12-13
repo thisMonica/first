@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/test?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+  #redis≈‰÷√
+  redis:
+    host: 127.0.0.1
+
+logging:
+  config: classpath:logback.xml
+  level:
+    mapper: debug
+
+#mybatis≈‰÷√
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.first.entity
+
+
+callback:
+  rsa:
+    privateKey: MIIBVQIBADANBgkqhkiG9w0BAQEFAASCAT8wggE7AgEAAkEAk1Neypr8KyAuI4DxZlzpFjhBNlzWkQXGVGQzj2mTSSUN8TR7H23x5Qcfh+Z6WfhRscl+eikFivCpve/tfyMeQQIDAQABAkBUUuizoIfrCy09ZwVEqLNE44f33KV3Nk3xabTVRgFmYG7Beio0UvyMQEXwIVeEYFVwSoz6n1qoCwfLy9aEPqzRAiEA1fe/KniGo3n83q2pfl0b7TRoADSesdIag9PDvcPgqR0CIQCwREAT+HT8u2pUZUS0lwt06ZfBGroZCLUsI9fwzrjkdQIgSvoepc5IN77Gam1mSF5uK8fCbdgCiAM8wVcSb0vVTM0CIQCXCHQLaJn9MC1k0Tz0rHPRopI4kUkiSDbM8o2GNetxPQIhAM7xh/Jg5aOJF5bTLtCtwL5blruQqO7j5SbnsMIyDjVL
+    publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJNTXsqa/CsgLiOA8WZc6RY4QTZc1pEFxlRkM49pk0klDfE0ex9t8eUHH4fmeln4UbHJfnopBYrwqb3v7X8jHkECAwEAAQ==
+
+#◊‘∂®“Â≈‰÷√
+abc:
+  config: {"a": "A","b": "B","c": "C"}

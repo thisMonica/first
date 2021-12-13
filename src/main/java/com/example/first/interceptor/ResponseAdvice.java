@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  * @date 2021/7/13 0:53
  * @desc:
  */
-@RestControllerAdvice
+//@RestControllerAdvice
 public class ResponseAdvice implements ResponseBodyAdvice {
 
     @Override

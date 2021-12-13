@@ -26,7 +26,7 @@
         </insert>
 
     <update id="updateAge">
-        update `user` set age = age+#{age} where id = #{id};
+        update `user` set age = age+#{age} where id = #{id} and age = 10;
     </update>
 
     <update id="updatExtend">

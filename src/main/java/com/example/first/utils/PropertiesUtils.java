@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @date 2020/4/19 11:52
  */
 @Component
-@PropertySource("classpath:application.properties")
+@PropertySource("classpath:application.yml")
 public class PropertiesUtils {
 
 

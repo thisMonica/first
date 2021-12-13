@@ -156,7 +156,7 @@ public class TestController<T> {
 
     }
 
-    @GetMapping("/queryTest3")
+    @GetMapping("/updateAgeTest")
     public ResultJson<Object> test3(String id, Integer age,Integer extend) {
 
         log.info("id:{},age:{}", id, age);
@@ -171,15 +171,15 @@ public class TestController<T> {
                 }
             });
 
-            executor.execute(new Runnable() {
-                @Override
-                public void run() {
-                    User user = new User();
-                    user.setId(id);
-                    user.setExtend(extend);
-                    userService.updatExtend(user);
-                }
-            });
+//            executor.execute(new Runnable() {
+//                @Override
+//                public void run() {
+//                    User user = new User();
+//                    user.setId(id);
+//                    user.setExtend(extend);
+//                    userService.updatExtend(user);
+//                }
+//            });
 
         }
         return ResultJson.toSuccess();
