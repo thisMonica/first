@@ -19,7 +19,7 @@ HELP.md
 *.ipr
 .txlcn
 .mvn
-.logs
+*.logs
 
 ### NetBeans ###
 /nbproject/private/
